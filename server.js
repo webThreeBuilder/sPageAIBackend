@@ -6,7 +6,7 @@ import dotenv from 'dotenv';
 
 dotenv.config();
 
-const allowedOrigins = ['https://spageai.mvpdeliver.com'];
+const allowedOrigins = eval(process.env.ALLOW_DOMAINS)
 const corsOptions = {
   origin: function (origin, callback) {
     if (!origin || allowedOrigins.includes(origin)) {
